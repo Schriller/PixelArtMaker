@@ -7,8 +7,13 @@
 var submit = document.getElementById("submit");
 
 submit.onclick = function() {
+  // delete existing grid
+  var table = document.getElementById('pixelCanvas')
+  table.innerHTML = ''
+  // get new width and height of grid
   var iRow = document.getElementById('inputWidth').value;
   var iColumn = document.getElementById('inputHeight').value;
+  // make new grid
   makeGrid(iRow, iColumn);
   event.preventDefault();
 }
@@ -21,11 +26,12 @@ JavaScript_and_DOM_Interfaces*/
 
 
 function makeGrid(iRow, iColumn) {
-  // get the reference for the body
-  var body = document.getElementsByTagName("body")[0];
 
-  // creates a <table> element and a <tbody> element
+  // get the reference for the body and table
+  var body = document.getElementsByTagName("body")[0];
   var tbl = document.getElementsByTagName("table")[0];
+
+  // creates a <tbody> element
   var tblBody = document.createElement("tbody");
 
   // creating all cells
@@ -34,12 +40,11 @@ function makeGrid(iRow, iColumn) {
     var row = document.createElement("tr");
 
     for (var j = 0; j < iColumn; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
+      // Create a <td> element and put the <td> at
       // the end of the table row
       var cell = document.createElement("td");
-      var cellText = document.createTextNode("");
-      cell.appendChild(cellText);
+      //var cellText = document.createTextNode("");
+      //cell.appendChild(cellText);
       row.appendChild(cell);
     }
 
