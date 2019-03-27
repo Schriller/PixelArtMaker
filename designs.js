@@ -43,6 +43,12 @@ function makeGrid(iRow, iColumn) {
       // Create a <td> element and put the <td> at
       // the end of the table row
       var cell = document.createElement("td");
+      cell.addEventListener('click', function colorIn() {
+        var colorCode = document.getElementById("colorPicker").value
+        cell.style.backgroundColor = colorCode
+        console.log(colorCode)
+        console.log("A cell was clicked.")
+      });
       //var cellText = document.createTextNode("");
       //cell.appendChild(cellText);
       row.appendChild(cell);
