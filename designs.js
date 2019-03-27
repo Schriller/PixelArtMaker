@@ -25,7 +25,7 @@ function makeGrid(iRow, iColumn) {
   var body = document.getElementsByTagName("body")[0];
 
   // creates a <table> element and a <tbody> element
-  var tbl = document.createElement("table");
+  var tbl = document.getElementsByTagName("table")[0];
   var tblBody = document.createElement("tbody");
 
   // creating all cells
@@ -52,5 +52,5 @@ function makeGrid(iRow, iColumn) {
   // appends <table> into <body>
   body.appendChild(tbl);
   // sets the border attribute of tbl to 2;
-  tbl.setAttribute("border", "2");
+  tbl.setAttribute("border", "0");
 }
