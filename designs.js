@@ -3,15 +3,24 @@
 
 // When size is submitted by the user, call makeGrid()
 
-//function makeGrid() {
+// source: https://www.youtube.com/watch?v=BQTBUFKUd8o
+var submit = document.getElementById("submit");
+
+submit.onclick = function() {
+  var iRow = document.getElementById('inputWidth').value;
+  var iColumn = document.getElementById('inputHeight').value;
+  makeGrid(iRow, iColumn);
+  event.preventDefault();
+}
+
 /* source: https://developer.mozilla.org/en-US/docs/Web/
 API/Document_Object_Model/Traversing_an_HTML_table_with_
 JavaScript_and_DOM_Interfaces*/
 
 // Your code goes here!
 
-//}
-function generate_table() {
+
+function makeGrid(iRow, iColumn) {
   // get the reference for the body
   var body = document.getElementsByTagName("body")[0];
 
@@ -20,16 +29,16 @@ function generate_table() {
   var tblBody = document.createElement("tbody");
 
   // creating all cells
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < iRow; i++) {
     // creates a table row
     var row = document.createElement("tr");
 
-    for (var j = 0; j < 2; j++) {
+    for (var j = 0; j < iColumn; j++) {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
       var cell = document.createElement("td");
-      var cellText = document.createTextNode("cell in row "+i+", column "+j);
+      var cellText = document.createTextNode("");
       cell.appendChild(cellText);
       row.appendChild(cell);
     }
