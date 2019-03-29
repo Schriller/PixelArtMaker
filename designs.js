@@ -1,18 +1,14 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
 // source: https://www.youtube.com/watch?v=BQTBUFKUd8o
 var submit = document.getElementById("submit");
 
+// When size is submitted by the user, call makeGrid()
 submit.onclick = function() {
   // delete existing grid
   var table = document.getElementById('pixelCanvas')
   table.innerHTML = ''
   // get new width and height of grid
-  var iRow = document.getElementById('inputWidth').value;
-  var iColumn = document.getElementById('inputHeight').value;
+  var iColumn = document.getElementById('inputWidth').value;
+  var iRow = document.getElementById('inputHeight').value;
   // make new grid
   makeGrid(iRow, iColumn);
   event.preventDefault();
@@ -21,9 +17,6 @@ submit.onclick = function() {
 /* source: https://developer.mozilla.org/en-US/docs/Web/
 API/Document_Object_Model/Traversing_an_HTML_table_with_
 JavaScript_and_DOM_Interfaces*/
-
-// Your code goes here!
-
 
 function makeGrid(iRow, iColumn) {
 
@@ -62,6 +55,6 @@ function makeGrid(iRow, iColumn) {
   tbl.appendChild(tblBody);
   // appends <table> into <body>
   body.appendChild(tbl);
-  // sets the border attribute of tbl to 2;
+  // sets the border attribute of tbl to 0;
   tbl.setAttribute("border", "0");
 }
