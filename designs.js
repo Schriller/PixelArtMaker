@@ -21,7 +21,7 @@ JavaScript_and_DOM_Interfaces*/
 function makeGrid(iRow, iColumn) {
   // get the reference for the body and table
   var body = document.getElementsByTagName("body")[0];
-  var tbl = document.getElementsByTagName("table")[0];
+  var table = document.getElementsByTagName("table")[0];
 
   // creates a <tbody> element
   var tblBody = document.createElement("tbody");
@@ -48,9 +48,9 @@ function makeGrid(iRow, iColumn) {
   }
 
   // put the <tbody> in the <table>
-  tbl.appendChild(tblBody);
+  table.appendChild(tblBody);
   // appends <table> into <body>
-  body.appendChild(tbl);
-  // sets the border attribute of tbl to 0;
-  tbl.setAttribute("border", "0");
+  body.appendChild(table);
+  // sets the border attribute of table to 0;
+  table.setAttribute("border", "0");
 }
